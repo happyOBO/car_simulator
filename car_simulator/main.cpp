@@ -31,17 +31,21 @@ void MyKeyboard(unsigned char key, int p, int k) {
  switch (key) {
  case 'd':
          MyCar.Rotate(true);
-         MyCar.Control_velocity(true);
+//         MyCar.Control_velocity(true);
+        MyCar.move_car(0.0,1.0);
     break;
  case 'a':
          MyCar.Rotate(false);
-         MyCar.Control_velocity(true);
+//         MyCar.Control_velocity(true);
+        MyCar.move_car(0.0,-1.0);
     break;
  case 'w':
-         MyCar.Control_velocity(true);
+//         MyCar.Control_velocity(true);
+        MyCar.move_car(1.0,0.0);
     break;
  case 's':
-         MyCar.Control_velocity(false);
+//         MyCar.Control_velocity(false);
+        MyCar.move_car(-1.0,0.0);
      break;
  case 32 :
 
