@@ -1,11 +1,7 @@
 # depslib dependency file v1.0
-1603979909 source:g:\documents\github\car_simulator\car_simulator\main.cpp
-	<GL/glut.h>
-	<ctime>
-	<iostream>
-	<string.h>
-	<utility>
-	<vector>
+1604151401 source:g:\documents\github\car_simulator\car_simulator\main.cpp
+	"car.h"
+	"basic_setting.h"
 
 1571309680 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
@@ -221,4 +217,64 @@
 1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\glu.h
 	<stddef.h>
 	<GL/gl.h>
+
+1604150029 source:g:\documents\github\car_simulator\car_simulator\basic_setting.cpp
+	"basic_setting.h"
+
+1604147346 g:\documents\github\car_simulator\car_simulator\basic_setting.h
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<ctime>
+	<iostream>
+	<string.h>
+	<utility>
+	<vector>
+
+1341006776 c:\program files (x86)\codeblocks\mingw\include\stdio.h
+	<_mingw.h>
+	<stddef.h>
+	<stdarg.h>
+	<sys/types.h>
+
+1341006780 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+	<_mingw.h>
+	<stddef.h>
+
+1604152843 source:g:\documents\github\car_simulator\car_simulator\car.cpp
+	"car.h"
+
+1604152682 g:\documents\github\car_simulator\car_simulator\car.h
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<ctime>
+	<iostream>
+	<string.h>
+	<utility>
+	<vector>
+
+1604147346 source:g:\documents\github\car_simulator\car_simulator\basic_setting.h
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<ctime>
+	<iostream>
+	<string.h>
+	<utility>
+	<vector>
+
+1604152682 source:g:\documents\github\car_simulator\car_simulator\car.h
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<ctime>
+	<iostream>
+	<string.h>
+	<utility>
+	<vector>
 

@@ -1,24 +1,9 @@
-/*
- * GLUT Shapes Demo
- *
- * Written by Nigel Stewart November 2003
- *
- * This program is test harness for the sphere, cone
- * and torus shapes in GLUT.
- *
- * Spinning wireframe and smooth shaded shapes are
- * displayed until the ESC or q key is pressed.  The
- * number of geometry stacks and slices can be adjusted
- * using the + and - keys.
- */
 
-#include <GL/glut.h>
-#include <ctime>
-#include <iostream>
-#include <string.h>
-#include <utility>
-#include <vector>
+#include "car.h"
+#include "basic_setting.h"
 using namespace std;
+
+Car MyCar(0.0,0.0);
 
 void Draw_Wallpaper()
 {
@@ -26,53 +11,49 @@ void Draw_Wallpaper()
 }
 void Idlefunc()
 {
+    pair<GLfloat,GLfloat> loc = MyCar.Return_loc();
+    GLfloat z_location = loc.second;
+    GLfloat x_location = loc.first;
     glClear(GL_COLOR_BUFFER_BIT);
-    GLUquadricObj *quadratic;
-    quadratic = gluNewQuadric();
     glPushMatrix();
-        glRotatef(60.0,1.0,0.5,0.0);
-        glPushMatrix();
-            glTranslatef(75.0,-25.0,-25.0);
-            glColor3f(0.0,0.0,0.5);
-            glutSolidCube(50);
-        glPopMatrix();
-        glPushMatrix();
-            glTranslatef(75.0,-25.0,25.0);
-            glutSolidCube(50);
-        glPopMatrix();
-            glColor3f(0.0,1.0,0.5);
-            glutSolidCube(100);
-            glColor3f(0.0,0.0,0.5);
-            glutWireCube(100);
-        glPushMatrix();
-            glTranslatef(-75.0,-25.0,25.0);
-            glutSolidCube(50);
-        glPopMatrix();
-        glPushMatrix();
-            glTranslatef(-75.0,-25.0,-25.0);
-            glutSolidCube(50);
-        glPopMatrix();
-        glPushMatrix();
-            glTranslatef(-50.0,-50.0,50.0);
-            glColor3f(0.0,0.0,0.0);
-            gluDisk(quadratic,0.0,25.0,32,32);
-            gluCylinder(quadratic,25.0,25.0,10.0,32,32);
-        glPopMatrix();
-        glPushMatrix();
-            glTranslatef(50.0,-50.0,50.0);
-            glColor3f(0.0,0.0,0.0);
-            gluDisk(quadratic,0.0,25.0,32,32);
-            gluCylinder(quadratic,25.0,25.0,10.0,32,32);
-        glPopMatrix();
-//        glPushMatrix();
-//            glTranslatef(-50.0,50.0,0.0);
-//            glutSolidCube(50);
-//        glPopMatrix();
+        gluLookAt(x_location + 50, 100.0, z_location + 50, x_location, 0.0, z_location, 0.0, 1.0, 0.0 );
+        //glRotatef(60.0,1.0,3.0,0.0);
+        DrawGround();
+        Draw_line();
+        MyCar.Draw_Car();
     glPopMatrix();
-    glFlush();
 
+    glFlush();
     glutPostRedisplay();
 }
+
+void MyKeyboard(unsigned char key, int p, int k) {
+ switch (key) {
+ case 'd':
+         MyCar.Rotate(true);
+         MyCar.Control_velocity(true);
+    break;
+ case 'a':
+         MyCar.Rotate(false);
+         MyCar.Control_velocity(true);
+    break;
+ case 'w':
+         MyCar.Control_velocity(true);
+    break;
+ case 's':
+         MyCar.Control_velocity(false);
+     break;
+ case 32 :
+
+    break;
+ default:
+     break;
+
+ }
+ glutPostRedisplay();
+}
+
+
 int main(int argc, char** argv)
 {
 
@@ -87,7 +68,7 @@ int main(int argc, char** argv)
     glOrtho(-500.0,500.0,-300.0,300.0,-500.0,500.0);
     glutDisplayFunc(Draw_Wallpaper);
     glutIdleFunc(Idlefunc);
-    //glutKeyboardFunc(MyKeyboard);
+    glutKeyboardFunc(MyKeyboard);
     glutMainLoop();
     return 0;
 }
