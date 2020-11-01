@@ -2,7 +2,7 @@
 
 ## Demo
 
-<img src="./car_simulation_demo.gif" width="800">
+<img src="./car_simulation_demo.gif" width="600">
 
 ### Contents
 
