@@ -10,6 +10,7 @@
 #include <string.h>
 #include <utility>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 class Car {
@@ -22,7 +23,7 @@ public :
     Car(GLfloat x, GLfloat z);
     pair <GLfloat, GLfloat> Return_loc();
     void Draw_Car();
-    //void Control_velocity(bool is_accel);
+    void Control_velocity(bool is_accel);
     void move_car(GLfloat add_x, GLfloat add_z);
     void Rotate(bool is_right);
     void Friction();

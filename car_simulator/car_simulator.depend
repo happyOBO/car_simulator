@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1604156055 source:g:\documents\github\car_simulator\car_simulator\main.cpp
+1604188615 source:g:\documents\github\car_simulator\car_simulator\main.cpp
 	"car.h"
 	"basic_setting.h"
 
@@ -218,7 +218,7 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1604150029 source:g:\documents\github\car_simulator\car_simulator\basic_setting.cpp
+1604195931 source:g:\documents\github\car_simulator\car_simulator\basic_setting.cpp
 	"basic_setting.h"
 
 1604147346 g:\documents\github\car_simulator\car_simulator\basic_setting.h
@@ -242,10 +242,10 @@
 	<_mingw.h>
 	<stddef.h>
 
-1604154788 source:g:\documents\github\car_simulator\car_simulator\car.cpp
+1604195028 source:g:\documents\github\car_simulator\car_simulator\car.cpp
 	"car.h"
 
-1604155955 g:\documents\github\car_simulator\car_simulator\car.h
+1604187285 g:\documents\github\car_simulator\car_simulator\car.h
 	<GL/glut.h>
 	<stdio.h>
 	<stdlib.h>
@@ -255,6 +255,7 @@
 	<string.h>
 	<utility>
 	<vector>
+	<cmath>
 
 1604147346 source:g:\documents\github\car_simulator\car_simulator\basic_setting.h
 	<GL/glut.h>
@@ -267,7 +268,7 @@
 	<utility>
 	<vector>
 
-1604155955 source:g:\documents\github\car_simulator\car_simulator\car.h
+1604187285 source:g:\documents\github\car_simulator\car_simulator\car.h
 	<GL/glut.h>
 	<stdio.h>
 	<stdlib.h>
@@ -277,4 +278,5 @@
 	<string.h>
 	<utility>
 	<vector>
+	<cmath>
 

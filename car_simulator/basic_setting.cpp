@@ -6,7 +6,7 @@ void Draw_line()
     //glMatrixMode(GL_MODELVIEW);
     GLfloat line_width = 20.0;
     GLfloat line_height = 50.0;
-    glColor3f(0.07,0.15,0.27);
+    glColor3f(0.88,0.88,0.99);
     glPushMatrix();
         for(int i = 0; i< 200; i++)
         {
@@ -37,7 +37,6 @@ void Draw_line()
                 glEnd();
             glPopMatrix();
         }
-
     glPopMatrix();
 }
 
@@ -55,7 +54,7 @@ void DrawGround()
     glEnd();
 
 
-    glColor3f(0.17,0.35,0.62);
+    glColor3f(0.64,0.63,0.89);
     glBegin(GL_POLYGON);
         glVertex3f(- ground_size ,0.0, -road_size);
         glVertex3f(- ground_size ,0.0, +road_size);
@@ -85,7 +84,7 @@ void DrawGround()
         glVertex3f( -road_size ,0.0, ground_size / 10);
         glVertex3f( -road_size ,0.0, (ground_size / 10 - 2 * road_size));
     glEnd();
-
+    glPopMatrix();
     glPushMatrix();
         glRotatef(90.0, 0.0, 2.0, 0.0);
         glBegin(GL_POLYGON);
@@ -95,5 +94,16 @@ void DrawGround()
         glVertex3f( -road_size ,0.0, (ground_size / 10 - 2 * road_size));
     glEnd();
     glPopMatrix();
+
+    glPushMatrix();
+        glRotatef(270.0, 0.0, 1.0, 0.0);
+        glColor3f(0.18,0.16,0.68);
+        glBegin(GL_POLYGON);
+        glVertex3f(- 2* road_size ,0.0, 2* road_size);
+        glVertex3f(- ground_size / 10 ,0.0, 2* road_size);
+        glVertex3f( -2*road_size ,0.0, ground_size / 10);
+    glEnd();
+    glPopMatrix();
+
     glPopMatrix();
 }
